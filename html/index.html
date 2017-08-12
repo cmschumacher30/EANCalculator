@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="calculatorApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="start.js"></script>
+    <script src="controller.js"></script>
+    <script src="Directive.js"></script>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="panel panel-default" style="width:20%; height:50%">
+        <div class="panel-body">
+            <div class="row">
+                <input class="form-control input-sm" id="inputsm" ng-model="ctrl.windowText" type="text">
+            </div>
+            <div class="row">
+                <div class="col-sm-3"> <input class="btn btn-block" type="button" ng-click="ctrl.modeChange()" bmode def-value='Alpha' alt-value='Num' def-color="aqua" alt-color="orange"/> </div>
+                <div class="col-sm-3"> <input class="btn btn-block" type="button" value="Store"  ng-click="ctrl.storeClick()"/> </div>
+                <div class="col-sm-3"> <button class="btn btn-block" ng-click="ctrl.backClick()"><span class="glyphicon glyphicon-arrow-left"></span></button> </div>
+            </div>            
+            <div ng-view></div>            
+            <div class="row">
+                <div class="col-sm-3"> <input class="btn btn-primary" type="button" value="+" ng-click="ctrl.operationClick($event)"/> </div>
+                <div class="col-sm-3"> <input class="btn btn-primary" type="button" value="-" ng-click="ctrl.operationClick($event)"/> </div>
+                <div class="col-sm-3"> <input class="btn btn-primary" type="button" value="X" ng-click="ctrl.operationClick($event)"/> </div>
+                <div class="col-sm-3"> <input class="btn btn-primary" type="button" value="÷" ng-click="ctrl.operationClick($event)"/> </div>
+            </div>
+            <div class="row">                
+                <div class="col-sm-4"> <input class="btn btn btn-info" type="button" id="btnSpace" value="SPACE" ng-click="ctrl.spaceClick()" /></div>
+                <div class="col-sm-4"> <input class="btn btn btn-info" type="button" id="btnTimer" value="Timer" ng-click="ctrl.timerClick()" /> </div>
+            </div>
+
+        </div>
+  
+        </div>
+</body>
+</html>
